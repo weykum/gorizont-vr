@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- ===== СЧЁТЧИКИ (head) ===== -->
+<!-- сюда вставится код Sber Ads (Топ-100) -->
+<!-- сюда вставится код MyTracker (Top.Mail.Ru) -->
+<!-- ===== /СЧЁТЧИКИ (head) ===== -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Онлайн-бронирование — Горизонт VR</title>
+<meta name="description" content="Забронируйте время на VR-арене «Горизонт» онлайн: выберите дату, время и количество игроков. Без предоплаты.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header" data-gorizont="шапка">
+  <div class="wrap">
+    <a class="logo" href="index.html" data-gorizont="логотип">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26e6ff"/><stop offset=".55" stop-color="#8b5cff"/><stop offset="1" stop-color="#ff3d9a"/></linearGradient></defs><circle cx="20" cy="20" r="17" fill="none" stroke="url(#lg)" stroke-width="3"/><path d="M3 22h34" stroke="url(#lg)" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="15" r="5" fill="url(#lg)"/></svg>
+      <span>ГОРИЗОНТ<small>VR-АРЕНА · МОСКВА</small></span>
+    </a>
+    <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    <nav class="nav" data-gorizont="меню">
+      <a href="igry.html" data-gorizont="меню::игры">Игры</a>
+      <a href="ceny.html" data-gorizont="меню::цены">Цены</a>
+      <a href="prazdniki.html" data-gorizont="меню::праздники">Праздники</a>
+      <a href="bron.html" class="active" data-gorizont="меню::бронь">Бронь</a>
+      <a href="kontakty.html" data-gorizont="меню::контакты">Контакты</a>
+    </nav>
+    <a class="btn btn-sm header-cta" href="bron.html" data-goal="booking_click" data-goal-label="шапка" data-gorizont="меню::забронировать">Забронировать</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero" data-gorizont="бронь::заголовок">
+  <div class="wrap">
+    <span class="tag">Бронирование</span>
+    <h1>Забронировать время</h1>
+    <p>Выберите дату и свободный слот — администратор подтвердит бронь звонком. Предоплата не нужна.</p>
+  </div>
+</section>
+
+<section style="padding-top:12px" data-gorizont="бронь::форма">
+  <div class="wrap" style="max-width:820px">
+    <div class="form-card">
+      <form data-lead="booking_submit" data-success="booking-ok">
+        <div class="form-grid">
+          <div><label for="date">Дата</label><input id="date" name="date" type="date" required></div>
+          <div><label for="players">Игроков</label><select id="players" name="players"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5–8 (вся арена)</option></select></div>
+          <div class="full"><label>Время начала</label><div class="slots" id="slots"></div><input type="hidden" id="time" name="time"><p class="hint">Зачёркнутые слоты уже заняты.</p></div>
+          <div><label for="format">Длительность</label><select id="format" name="format"><option value="30">30 минут</option><option value="60" selected>1 час</option><option value="90">1,5 часа</option><option value="120">2 часа</option></select></div>
+          <div><label for="b-name">Имя</label><input id="b-name" name="name" required placeholder="Как к вам обращаться"></div>
+          <div class="full"><label for="b-phone">Телефон</label><input id="b-phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div>
+          <div class="full"><button class="btn" type="submit" data-gorizont="бронь::форма::отправить">Забронировать</button><p class="hint">Это учебный сайт: бронь никуда не отправляется, можно ввести любые данные.</p></div>
+        </div>
+      </form>
+      <div class="success" id="booking-ok">
+        <svg class="ok" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="none" stroke="#c8ff3d" stroke-width="4"/><path d="M22 37l9 9 19-20" fill="none" stroke="#c8ff3d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h2>Бронь создана!</h2>
+        <p class="muted">Администратор перезвонит в течение 15 минут, чтобы подтвердить время.</p>
+        <a class="btn btn-ghost btn-sm" href="kontakty.html" data-gorizont="бронь::успех::как добраться">Как к нам добраться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-gorizont="бронь::подсказки">
+  <div class="wrap">
+    <div class="grid-3">
+      <div class="card"><h3>Приходите за 10 минут</h3><p class="muted">Успеете оставить вещи и пройти инструктаж, не теряя игрового времени.</p></div>
+      <div class="card"><h3>Опоздали?</h3><p class="muted">Сеанс начнётся по факту прихода, если следующий слот свободен.</p></div>
+      <div class="card"><h3>Нужно отменить?</h3><p class="muted">Позвоните нам за 2 часа — бесплатно перенесём или отменим бронь.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer" data-gorizont="подвал">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">ГОРИЗОНТ<small style="margin-left:8px">VR-АРЕНА</small></a>
+        <p class="muted" style="margin-top:12px">VR-арена со свободным перемещением: четыре игровые зоны, шлемы последнего поколения и инструктор на каждой игре.</p>
+      </div>
+      <div>
+        <h3>Разделы</h3>
+        <ul>
+          <li><a href="igry.html">Игры</a></li>
+          <li><a href="ceny.html">Цены</a></li>
+          <li><a href="prazdniki.html">Праздники и корпоративы</a></li>
+          <li><a href="bron.html">Онлайн-бронирование</a></li>
+          <li><a href="kontakty.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Связь</h3>
+        <ul>
+          <li><a href="tel:+79990000000" data-goal="phone_click" data-goal-label="подвал" data-gorizont="подвал::телефон">+7 (999) 000-00-00</a></li>
+          <li class="muted">Ежедневно 10:00–23:00</li>
+          <li class="muted">Москва, м. Павелецкая</li>
+        </ul>
+      </div>
+    </div>
+    <!-- ===== СЧЁТЧИКИ (подвал) ===== -->
+    <div class="counters" data-gorizont="подвал::счётчики">
+<!-- сюда вставится кнопка LiveInternet 88x31 -->
+<!-- сюда вставится виджет Топ-100 -->
+<!-- сюда вставится логотип Top.Mail.Ru -->
+    </div>
+    <!-- ===== /СЧЁТЧИКИ (подвал) ===== -->
+    <p class="disclaimer">© <span class="year">2026</span> «Горизонт VR». Учебный проект по дисциплине «Веб-аналитика» (Московский Политех): клуб вымышленный, заявки никуда не отправляются, вводить настоящие данные не нужно.</p>
+  </div>
+</footer>
+<script></script>
+<script src="assets/js/analytics.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
