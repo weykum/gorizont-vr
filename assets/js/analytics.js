@@ -76,6 +76,15 @@
     track(el.getAttribute("data-goal"), { label: label });
   });
 
+  /* виджет Топ-100 в подвале (отрисуется, если виджет включён в настройках счётчика) */
+  (window._top100q = window._top100q || []).push(function () {
+    try {
+      if (window.top100Counter && document.getElementById("top100_widget")) {
+        window.top100Counter.drawLogoTo("top100_widget");
+      }
+    } catch (e) { /* ignore */ }
+  });
+
   window.addEventListener("load", function () {
     var uid = null;
     try { uid = localStorage.getItem("gv_uid"); } catch (e) {}
